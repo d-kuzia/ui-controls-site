@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Controls - Елементи Інтерфейсу</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>UI Controls</h1>
+        <p>Повний перелік елементів інтерфейсу з поясненнями та прикладами</p>
+      </div>
+
+      <div class="content">
+        <!-- 1. Radio Button -->
+        <div class="ui-element">
+          <h2>1. Radio Button (Радіокнопка)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Radio button дозволяє користувачу вибрати
+              лише один варіант з групи взаємовиключних опцій. Використовується
+              коли потрібно зробити єдиний вибір з декількох альтернатив.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Вибір</strong></p>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" id="shos1" name="choice" value="shos" />
+                  <label for="shos1">Шось</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="shos2"
+                    name="choice"
+                    value="shos_dva"
+                  />
+                  <label for="shos2">Шось два</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="shos3"
+                    name="choice"
+                    value="shos_try"
+                  />
+                  <label for="shos3">Шось три</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Checkbox -->
+        <div class="ui-element">
+          <h2>2. Checkbox (Прапорець)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Checkbox дозволяє користувачу вибрати один
+              або декілька варіантів із списку опцій. Кожен checkbox працює
+              незалежно від інших, що дозволяє множинний вибір.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Вибір багато</strong></p>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="van" name="items" value="van" />
+                  <label for="van">Ван</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="tu" name="items" value="tu" />
+                  <label for="tu">Ту</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="sri" name="items" value="sri" />
+                  <label for="sri">Срі</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="for" name="items" value="for" />
+                  <label for="for">Фор</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Text Input -->
+        <div class="ui-element">
+          <h2>3. Text Input (Текстове поле)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Text input дозволяє користувачу вводити
+              текстові дані. Може мати різні типи для різних видів інформації
+              (текст, email, пароль, число тощо).
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Основні поля форми</strong></p>
+              <div style="display: flex; flex-direction: column; gap: 15px">
+                <div>
+                  <label for="imya">Повне ім'я:</label>
+                  <input
+                    type="text"
+                    id="imya"
+                    placeholder="Введіть ваше повне ім'я"
+                  />
+                </div>
+                <div>
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="example@email.com"
+                  />
+                </div>
+                <div>
+                  <label for="password">Пароль:</label>
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Введіть пароль"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Tabs -->
+        <div class="ui-element">
+          <h2>4. Tabs (Вкладки)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Tabs дозволяють організувати контент у
+              вкладки, показуючи лише одну секцію за раз. Це економить місце на
+              сторінці та покращує навігацію по різних розділах.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <div class="tabs" id="vkladky">
+                <div class="tab-buttons">
+                  <button
+                    class="tab-button active"
+                    onclick="showTab('vkladky', 'vkladka1', this)"
+                  >
+                    Вкладка 1
+                  </button>
+                  <button
+                    class="tab-button"
+                    onclick="showTab('vkladky', 'vkladka2', this)"
+                  >
+                    Вкладка
+                  </button>
+                  <button
+                    class="tab-button"
+                    onclick="showTab('vkladky', 'vkladka3', this)"
+                  >
+                    Вкладка 3
+                  </button>
+                </div>
+                <div id="vkladka1" class="tab-content active">
+                  <p>Тут шось про вкладку 1</p>
+                </div>
+                <div id="vkladka2" class="tab-content">
+                  <p>А тут шось про вкладку 2</p>
+                </div>
+                <div id="vkladka3" class="tab-content">
+                  <p>Тут шось про вкладку 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Button -->
+        <div class="ui-element">
+          <h2>5. Button (Кнопка)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Button - інтерактивний елемент, який
+              дозволяє користувачу виконати певну дію одним кліком. Може мати
+              різні стилі залежно від важливості дії.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Інтерактивна кнопка</strong></p>
+              <button class="btn btn-primary" onclick="changeMessage()">
+                Жми
+              </button>
+              <div
+                id="buttonMessage"
+                class="button-message"
+                style="display: none"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Text Label -->
+        <div class="ui-element">
+          <h2>6. Text Label (Текстова мітка)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Text label використовується для підпису
+              інших елементів форми, надання інструкцій або відображення
+              статичної інформації. Покращує доступність та зрозумілість
+              інтерфейсу.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Мітки для полів форми</strong></p>
+              <div style="display: flex; flex-direction: column; gap: 15px">
+                <div>
+                  <label
+                    for="imya_korystuvacha"
+                    style="font-weight: bold; color: #333"
+                  >
+                    Ім'я користувача *
+                  </label>
+                  <input type="text" id="imya_korystuvacha" name="username" />
+                </div>
+                <div>
+                  <label for="age" style="font-weight: bold; color: #333">
+                    Вік (необов'язково)
+                  </label>
+                  <input type="number" id="age" name="age" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Link -->
+        <div class="ui-element">
+          <h2>7. Link (Посилання)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Link дозволяє користувачу переходити на
+              інші сторінки, розділи сайту або зовнішні ресурси. Зазвичай
+              виділяється кольором та може мати підкреслення.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <div class="link-examples">
+                <a
+                  href="https://google.com"
+                  target="_blank"
+                  class="link-external"
+                  >Google</a
+                >
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  class="link-external"
+                  >GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Tooltip -->
+        <div class="ui-element">
+          <h2>8. Tooltip (Спливаюча підказка)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Tooltip - це невелике спливаюче вікно з
+              додатковою інформацією, яке з'являється при наведенні курсора на
+              елемент. Використовується для надання контекстної допомоги.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Слово з підказкою</strong></p>
+              <p>
+                Наведіть курсор на слово
+                <span class="tooltip-container">
+                  <strong
+                    style="
+                      border-bottom: 1px dotted #2196f3;
+                      cursor: help;
+                      color: #2196f3;
+                    "
+                    >JavaScript</strong
+                  >
+                  <span class="tooltip-text"
+                    >JavaScript - мова програмування для веб-розробки</span
+                  >
+                </span>
+                щоб побачити підказку.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Dropdown List -->
+        <div class="ui-element">
+          <h2>9. Dropdown List (Випадаючий список)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Dropdown list дозволяє користувачу вибрати
+              один варіант з попередньо визначеного списку опцій. Економить
+              місце на сторінці, показуючи варіанти лише при необхідності.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Вибір</strong></p>
+              <div>
+                <label for="vybir">Оберіть:</label>
+                <select id="vybir" name="vybir">
+                  <option value="">-- Оберіть шось --</option>
+                  <option value="shos">Шось</option>
+                  <option value="odin">Один</option>
+                  <option value="polyana">Поляна</option>
+                  <option value="dva">Два</option>
+                  <option value="fiot">ФІОТ</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Data Grid -->
+        <div class="ui-element">
+          <h2>10. Data Grid (Таблиця даних)</h2>
+          <div class="description">
+            <p>
+              <strong>Опис:</strong> Data grid використовується для відображення
+              структурованих даних у табличному форматі. Дозволяє легко
+              порівнювати та аналізувати інформацію по рядках і стовпцях.
+            </p>
+          </div>
+          <div class="examples">
+            <h3>Приклад:</h3>
+            <div class="example">
+              <p><strong>Список користувачів</strong></p>
+              <table class="data-grid">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Ім'я</th>
+                    <th>Email</th>
+                    <th>Роль</th>
+                    <th>Статус</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>001</td>
+                    <td>Олександр</td>
+                    <td>alex@example.com</td>
+                    <td>Адміністратор</td>
+                    <td>Активний</td>
+                  </tr>
+                  <tr>
+                    <td>002</td>
+                    <td>Марія</td>
+                    <td>maria@example.com</td>
+                    <td>Модератор</td>
+                    <td>Активний</td>
+                  </tr>
+                  <tr>
+                    <td>003</td>
+                    <td>Віктор</td>
+                    <td>viktor@example.com</td>
+                    <td>Користувач</td>
+                    <td>Заблокований</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showTab(tabsId, contentId, buttonElement) {
+        // Знаходимо контейнер вкладок
+        const tabsContainer = document.getElementById(tabsId);
+
+        // Приховуємо всі вкладки в цьому контейнері
+        const contents = tabsContainer.querySelectorAll(".tab-content");
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        // Деактивуємо всі кнопки в цьому контейнері
+        const buttons = tabsContainer.querySelectorAll(".tab-button");
+        buttons.forEach((button) => {
+          button.classList.remove("active");
+        });
+
+        // Показуємо потрібну вкладку
+        document.getElementById(contentId).classList.add("active");
+
+        // Активуємо натиснуту кнопку
+        buttonElement.classList.add("active");
+      }
+
+      function changeMessage() {
+        const messageDiv = document.getElementById("buttonMessage");
+        const messages = [
+          "Кнопка раз",
+          "Кнопка два!",
+          "Кнопка три",
+          "НУ стоп",
+          "Всьо доситьі"
+        ];
+
+        const randomMessage =
+          messages[Math.floor(Math.random() * messages.length)];
+        messageDiv.textContent = randomMessage;
+        messageDiv.style.display = "block";
+      }
+
+      // Додаємо обробники подій після завантаження сторінки
+      document.addEventListener("DOMContentLoaded", function () {
+        // Radio buttons
+        const radioButtons = document.querySelectorAll('input[name="choice"]');
+        radioButtons.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            const label = document.querySelector(
+              `label[for="${this.id}"]`
+            ).textContent;
+            showMessage("radioMessage", `Ви вибрали: ${label}`);
+          });
+        });
+
+        // Checkboxes
+        const checkboxes = document.querySelectorAll('input[name="items"]');
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("change", function () {
+            const selectedItems = [];
+            checkboxes.forEach((cb) => {
+              if (cb.checked) {
+                const label = document.querySelector(
+                  `label[for="${cb.id}"]`
+                ).textContent;
+                selectedItems.push(label);
+              }
+            });
+
+            if (selectedItems.length > 0) {
+              showMessage(
+                "checkboxMessage",
+                `Вибрано: ${selectedItems.join(", ")}`
+              );
+            } else {
+              showMessage("checkboxMessage", "Нічого не вибрано");
+            }
+          });
+        });
+
+        // Text inputs
+        const textInputs = document.querySelectorAll(
+          "#imya, #email, #password"
+        );
+        textInputs.forEach((input) => {
+          input.addEventListener("input", function () {
+            const label = document.querySelector(
+              `label[for="${this.id}"]`
+            ).textContent;
+            if (this.value.trim()) {
+              showMessage(
+                "inputMessage",
+                `${label} ${
+                  this.type === "password"
+                    ? "*".repeat(this.value.length)
+                    : this.value
+                }`
+              );
+            } else {
+              showMessage("inputMessage", "Поля порожні");
+            }
+          });
+        });
+
+        // Select dropdown
+        const vybir = document.getElementById("vybir");
+        vybir.addEventListener("change", function () {
+          if (this.value) {
+            const selectedText = this.options[this.selectedIndex].text;
+            showMessage("selectMessage", `Вибрано: ${selectedText}`);
+          } else {
+            showMessage("selectMessage", "Нічого не вибрано");
+          }
+        });
+
+        // Username and age inputs
+        const imyaKorystuvacha = document.getElementById("imya_korystuvacha");
+        const ageInput = document.getElementById("age");
+
+        [imyaKorystuvacha, ageInput].forEach((input) => {
+          input.addEventListener("input", function () {
+            const label = document.querySelector(
+              `label[for="${this.id}"]`
+            ).textContent;
+            if (this.value.trim()) {
+              showMessage("labelMessage", `${label} ${this.value}`);
+            } else {
+              showMessage("labelMessage", "Поля порожні");
+            }
+          });
+        });
+      });
+
+      function showMessage(elementId, message) {
+        let messageDiv = document.getElementById(elementId);
+        if (!messageDiv) {
+          messageDiv = document.createElement("div");
+          messageDiv.id = elementId;
+          messageDiv.className = "button-message";
+          messageDiv.style.marginTop = "10px";
+        }
+
+        messageDiv.textContent = message;
+        messageDiv.style.display = "block";
+
+        // Знаходимо батьківський контейнер та додаємо повідомлення
+        const parentExample =
+          event?.target?.closest(".example") ||
+          document.querySelector(`#${elementId.replace("Message", "")}`);
+
+        if (parentExample && !parentExample.contains(messageDiv)) {
+          parentExample.appendChild(messageDiv);
+        } else if (!parentExample) {
+          // Якщо не можемо знайти батьківський елемент, додаємо в кінець відповідної секції
+          const sections = {
+            radioMessage: document
+              .querySelector('input[name="choice"]')
+              .closest(".example"),
+            checkboxMessage: document
+              .querySelector('input[name="items"]')
+              .closest(".example"),
+            inputMessage: document.querySelector("#imya").closest(".example"),
+            selectMessage: document.querySelector("#vybir").closest(".example"),
+            labelMessage: document
+              .querySelector("#imya_korystuvacha")
+              .closest(".example")
+          };
+
+          if (
+            sections[elementId] &&
+            !sections[elementId].contains(messageDiv)
+          ) {
+            sections[elementId].appendChild(messageDiv);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
